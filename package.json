@@ -8,9 +8,9 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
-        "@capacitor/android": "^3.2.0",
-        "@capacitor/core": "^3.2.0",
-        "@capacitor/ios": "^3.2.0",
+        "@capacitor/android": "3.4.2",
+        "@capacitor/core": "3.4.2",
+        "@capacitor/ios": "3.4.2",
         "@capacitor/share": "^1.0.3",
         "@capacitor/storage": "^1.0.3",
         "@ionic/vue": "5.6.14",
@@ -28,7 +28,7 @@
         "vuex": "^4.0.2"
     },
     "devDependencies": {
-        "@capacitor/cli": "^3.2.0",
+        "@capacitor/cli": "3.4.2",
         "@stencil/core": "1.7.5",
         "@types/ws": "^7.4.7",
         "@vue/cli-plugin-babel": "4.5.0",

@@ -1,0 +1,6 @@
+{
+	"appId": "com.everythingandnothingdev.webbrowsermediaremotecontrol",
+	"appName": "web-browser-media-remote-control-app",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
