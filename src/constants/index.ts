@@ -1,0 +1,2 @@
+export const mqttBrokerDownloadUrl: string = 'https://github.com/everythingandnothingdev/web-browser-media-remote-control-mqtt-broker/releases';
+export const defaultMqttTopicPrefix: string = 'webBrowserMediaRemoteControl';

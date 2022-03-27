@@ -1,0 +1,47 @@
+p {
+    line-height: 1.4;
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+.ion-margin-micro {
+    --ion-margin: 2px !important;
+}
+.ion-margin-tiny {
+    --ion-margin: 4px !important;
+}
+.ion-margin-small {
+    --ion-margin: 8px !important;
+}
+.ion-margin-modest {
+    --ion-margin: 12px !important;
+}
+.ion-margin-medium {
+    --ion-margin: 16px !important;
+}
+.ion-margin-large {
+    --ion-margin: 24px !important;
+}
+
+.ion-popover-medium {
+    --width: 400px;
+}
+
+ion-list {
+    &.list-bordered {
+        border-top: 0.55px solid #c8c7cc;
+        border-bottom: 0.55px solid #c8c7cc;
+        
+        ion-item:last-of-type {
+            --inner-border-width: 0px;
+        }
+    }
+}

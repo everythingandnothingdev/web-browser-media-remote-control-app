@@ -1,0 +1,82 @@
+{
+    "root": true,
+    "env": {
+        "node": true
+    },
+    "extends": [
+        "plugin:vue/vue3-essential"
+    ],
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "MemberExpression": "off",
+                "SwitchCase": 1
+            }
+        ],
+        "no-control-regex": "off",
+        "no-debugger": "warn",
+        "no-dupe-class-members": "off",
+        "no-template-curly-in-string": "off",
+        "no-throw-literal": "off",
+        "no-var": [
+            "error"
+        ],
+        "padded-blocks": [
+            "off"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "spaced-comment": "off",
+        "keyword-spacing": [
+            "error",
+            {
+                "before": true,
+                "after": true
+            }
+        ],
+        "prefer-promise-reject-errors": "off",
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "never",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "vue/html-indent": [
+            "error",
+            4
+        ],
+        "vue/no-deprecated-slot-attribute": "off", // Ion components use "slot" attribute, unrelated to Vue 3 but this rule hates it.
+        "vue/no-template-key": "off" // Vue 2 rule directly conflicts with Vue 3.
+    },
+    "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/__tests__/*.{j,t}s?(x)",
+                "**/tests/unit/**/*.spec.{j,t}s?(x)"
+            ],
+            "env": {
+                "jest": true
+            }
+        },
+        {
+            "files": [
+                "**/mock/**"
+            ],
+            "rules": {
+                "comma-dangle": "off",
+                "max-len": "off",
+                "no-useless-escape": "off",
+                "quotes": "off"
+            }
+        }
+    ]
+}
