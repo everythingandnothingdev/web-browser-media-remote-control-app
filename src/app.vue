@@ -8,6 +8,7 @@
 import { defineComponent, ref, onMounted } from 'vue';
 import { eventBus } from '@/services/mqtt-client';
 import store from '@/store';
+
 export default defineComponent({
     setup() {
         const isReady = ref<boolean>(false);

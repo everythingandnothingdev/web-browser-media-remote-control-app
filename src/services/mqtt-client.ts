@@ -57,6 +57,7 @@ function onClose() {
 }
 
 function onMessage(topic: string, message: string) {
+    topicPrefix = store.state.mqttCredentials?.topicPrefix || defaultMqttTopicPrefix;
     eventBus.emit('message', {
         topic: topic.replace(topicPrefix + '/', ''),
         message
@@ -70,7 +71,7 @@ async function connect({ protocol, host, port, username, password, topicPrefix }
         port,
         username,
         password,
-        topicPrefix: topicPrefix || defaultMqttTopicPrefix
+        topicPrefix: topicPrefix || store.state.mqttCredentials?.topicPrefix || defaultMqttTopicPrefix
     });
     end();
     client = mqtt.connect(protocol + host, {
@@ -135,6 +136,7 @@ async function subscribe(topic: string, opts: IClientSubscribeOptions): Promise<
     }
     await waitForConnected();
     return new Promise((resolve, reject) => {
+        topicPrefix = store.state.mqttCredentials?.topicPrefix || defaultMqttTopicPrefix;
         client.subscribe(topicPrefix + '/' + topic, opts, (error, granted) => {
             if (error) {
                 reject(error);
@@ -155,6 +157,7 @@ async function unsubscribe(topic: string | string[]): Promise<void> {
     }
     await waitForConnected();
     return new Promise((resolve, reject) => {
+        topicPrefix = store.state.mqttCredentials?.topicPrefix || defaultMqttTopicPrefix;
         client.unsubscribe(topicPrefix + '/' + topic, {}, (error, granted) => {
             if (error) {
                 reject(error);

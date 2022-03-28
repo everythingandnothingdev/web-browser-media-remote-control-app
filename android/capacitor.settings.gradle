@@ -7,3 +7,6 @@ project(':capacitor-share').projectDir = new File('../node_modules/@capacitor/sh
 
 include ':capacitor-storage'
 project(':capacitor-storage').projectDir = new File('../node_modules/@capacitor/storage/android')
+
+include ':capacitor-plugin-send-intent'
+project(':capacitor-plugin-send-intent').projectDir = new File('../node_modules/capacitor-plugin-send-intent/android')

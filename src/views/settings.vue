@@ -177,7 +177,8 @@ export default defineComponent({
                 host: mqttHost.value,
                 port: mqttPort.value,
                 username: mqttUsername.value,
-                password: mqttPassword.value
+                password: mqttPassword.value,
+                topicPrefix: mqttTopicPrefix.value
             });
             try {
                 await waitForConnected();

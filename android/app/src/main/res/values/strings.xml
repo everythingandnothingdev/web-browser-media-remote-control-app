@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">web-browser-media-remote-control-app</string>
-    <string name="title_activity_main">web-browser-media-remote-control-app</string>
+    <string name="app_name">Web Remote</string>
+    <string name="title_activity_main">Web Remote</string>
     <string name="package_name">com.everythingandnothingdev.webbrowsermediaremotecontrol</string>
     <string name="custom_url_scheme">com.everythingandnothingdev.webbrowsermediaremotecontrol</string>
 </resources>

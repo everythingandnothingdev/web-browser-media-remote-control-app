@@ -6,5 +6,9 @@
 	{
 		"pkg": "@capacitor/storage",
 		"classpath": "com.capacitorjs.plugins.storage.StoragePlugin"
+	},
+	{
+		"pkg": "capacitor-plugin-send-intent",
+		"classpath": "com.gustavosanjose.sendintentplugin.SendIntent"
 	}
 ]
