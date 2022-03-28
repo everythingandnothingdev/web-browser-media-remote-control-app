@@ -45,10 +45,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref, computed, nextTick } from 'vue';
+import { defineComponent, onMounted, ref, computed, watch, nextTick } from 'vue';
 import { duplicate, settings, tvOutline, playSkipBack, playSkipForward, search, volumeLow, volumeHigh } from 'ionicons/icons';
-import { menuController } from '@ionic/vue';
+import { menuController, toastController } from '@ionic/vue';
+import { connectionStatus } from '@/services/mqtt-client';
 import router from '@/router';
+import store from '@/store';
 
 import BrowserTabsList from '@/components/browser-tabs-list.vue';
 import RemoteButton from '@/components/remote-button.vue';
@@ -84,6 +86,8 @@ export default defineComponent({
         RemoteArrowsOk
     },
     setup() {
+        let disconnectedWarningToast: HTMLIonToastElement | null = null;
+
         const remoteGridContainer = ref<HTMLDivElement>();
         const gridMargin = ref<number>(16);
         const gridSizeX = ref<number>(5);
@@ -160,6 +164,23 @@ export default defineComponent({
         });
         const gridCellSizeY = computed(() => {
             return gridMarginlessHeight.value / gridSizeY.value;
+        });
+
+        watch([connectionStatus], async () => {
+            if (connectionStatus.value === 'connected') {
+                if (disconnectedWarningToast) {
+                    disconnectedWarningToast.dismiss();
+                }
+            } else if (!disconnectedWarningToast) {
+                disconnectedWarningToast = await toastController.create({
+                    header: 'Connecting',
+                    message: 'Please wait...',
+                    position: 'top',
+                    color: 'danger',
+                    duration: 0
+                });
+                await disconnectedWarningToast.present();
+            }
         });
 
         onMounted(async () => {
